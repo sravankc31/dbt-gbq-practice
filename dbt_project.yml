@@ -34,3 +34,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 seeds:
   +schema: raw
+models:
+  dbt_learn_intro:
+    staging:
+      +materialized: table
+      +schema: stage
+    marts:
+      +materialized: table
+      +schema: core
+  
