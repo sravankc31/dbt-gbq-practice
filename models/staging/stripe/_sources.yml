@@ -2,10 +2,12 @@ version: 2
 
 sources:
   - name: stripe
+    schema: raw
     description: Incoming stripe payment data.
-    database: raw
+    database: dbt-gbq
     tables:
       - name: payment
+        identifier: raw_payments
         columns:
           - name: id
             tests:
