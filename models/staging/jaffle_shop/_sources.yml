@@ -3,15 +3,18 @@ version: 2
 sources:
   - name: jaffle_shop
     description: A replica of the postgres database
-    database: raw
+    database: dbt-gbq
+    schema: raw
     tables:
       - name: customers
+        identifier: raw_customers
         columns:
           - name: id
             tests:
               - not_null
               - unique
       - name: orders
+        identifier: raw_orders
         description: One record per order
         loaded_at_field: _etl_loaded_at
         freshness:
