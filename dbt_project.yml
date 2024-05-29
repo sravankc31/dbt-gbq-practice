@@ -32,8 +32,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 
-seeds:
-  +schema: raw
+# seeds:
+#   +schema: raw
 models:
   dbt_learn_intro:
     staging:
@@ -42,3 +42,7 @@ models:
     marts:
       +enabled: true
       +materialized: table
+    +hours_to_expiration: 
+      {%if target.name=='qa'%} 1
+      {% else%} 1200
+      {%endif%}
