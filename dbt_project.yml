@@ -42,3 +42,7 @@ models:
     marts:
       +enabled: true
       +materialized: table
+    +hours_to_expiration: 
+      {%if target.name=='qa'%} 1
+      {% else%} 1200
+      {%endif%}
