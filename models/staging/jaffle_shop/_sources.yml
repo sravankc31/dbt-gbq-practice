@@ -3,7 +3,13 @@ version: 2
 sources:
   - name: jaffle_shop
     description: A replica of the postgres database
-    database: dbt-gbq
+    database: |
+      {%- if  target.name == "dev" -%} dbt-gbq
+      {%- elif target.name == "qa"  -%} raw_qa
+      {%- elif target.name == "prod"  -%} dbt-gbq-demo
+      {%- else -%} invalid_database
+      {%- endif -%}
+      
     schema: raw
     tables:
       - name: customers
