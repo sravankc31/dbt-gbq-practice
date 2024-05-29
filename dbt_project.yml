@@ -39,6 +39,7 @@ models:
     staging:
       +enabled: true
       +materialized: table
-      +schema: staging
+      +schema: stg
     marts:
       +enabled: true
+      +schema: dim
