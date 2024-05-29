@@ -1,3 +1,4 @@
+---adjsuting fct oerdsr
 with orders as  (
 
     select * from {{ ref('stg_orders' )}}
