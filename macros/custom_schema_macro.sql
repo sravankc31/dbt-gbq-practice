@@ -5,7 +5,10 @@
 
         {{ default_schema }}
     {% elif   target.schema == 'prod' -%}
-       "prod"_{{ custom_schema_name | trim }}
+       prod_{{ custom_schema_name | trim }}
+        {% elif   target.schema == 'qa' -%}
+       qa_{{ custom_schema_name | trim }}
+
 
     {%- else -%}
 
