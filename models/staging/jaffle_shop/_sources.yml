@@ -7,7 +7,7 @@ sources:
       {%- if  target.name == "dev" -%} dbt-gbq
       {%- elif target.name == "qa"  -%} raw_qa
       {%- elif target.name == "prod"  -%} dbt-gbq-demo
-      {%- else -%} invalid_database
+      {%- else -%} dbt-gbq
       {%- endif -%}
       
     schema: raw
