@@ -39,9 +39,6 @@ models:
     staging:
       +enabled: true
       +materialized: table
-      +schema: stage
     marts:
       +enabled: true
       +materialized: table
-      +schema: core
-  
