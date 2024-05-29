@@ -16,4 +16,4 @@ staged as (
 
 )
 
-select * from staged
+select * , '{{ env_var("DBT_CLOUD_RUN_ID", "manual") }}' as _audit_run_id from staged
