@@ -4,8 +4,8 @@
     {%- if custom_schema_name is none -%}
 
         {{ default_schema }}
-    {% elif   env_var('DBT_MY_ENV','') == 'prod' -%}
-       {{ custom_schema_name | trim }}
+    {% elif   target.schema == 'prod' -%}
+       "prod"_{{ custom_schema_name | trim }}
 
     {%- else -%}
 

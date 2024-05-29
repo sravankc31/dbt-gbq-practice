@@ -41,4 +41,3 @@ models:
       +materialized: table
     marts:
       +enabled: true
-      +materialized: table
