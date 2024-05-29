@@ -4,15 +4,12 @@
     {%- if custom_schema_name is none -%}
 
         {{ default_schema }}
-    {% elif   target.schema == 'prod' -%}
-       prod_{{ custom_schema_name | trim }}
-{% elif   target.schema == 'qa' -%}
-       qa_{{ custom_schema_name | trim }}
-
+    {%- elif env_var('DBT_MY_ENV') in ['prod'] -%}
+        prod_{{ custom_schema_name | trim }}
+    {%- elif target.name == 'qa' -%}
+        qa_{{ custom_schema_name | trim }}
     {%- else -%}
-
         {{ default_schema }}_{{ custom_schema_name | trim }}
-
     {%- endif -%}
 
 {%- endmacro %}
