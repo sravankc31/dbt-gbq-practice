@@ -1,4 +1,4 @@
-----testing git branch
+----testing git branch merging
 
 {{
     config(
