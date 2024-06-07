@@ -1,4 +1,5 @@
----stg
+----testing git branch
+
 {{
     config(
         materialized='table'
@@ -9,7 +10,7 @@ with source as (
     select * from {{ source('jaffle_shop','customers') }}
 
 ),
---saved
+----testing git branch
 
 staged as (
 
