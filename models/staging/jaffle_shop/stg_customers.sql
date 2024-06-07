@@ -1,8 +1,8 @@
-----testing git branch merging
+
 
 {{
     config(
-        materialized='table'
+        materialized='view'
     )
 }}
 with source as (
