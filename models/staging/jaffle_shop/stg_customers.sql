@@ -1,10 +1,15 @@
 ---stg
-
+{{
+    config(
+        materialized='table'
+    )
+}}
 with source as (
 
     select * from {{ source('jaffle_shop','customers') }}
 
 ),
+--saved
 
 staged as (
 
