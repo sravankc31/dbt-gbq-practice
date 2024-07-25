@@ -95,10 +95,7 @@ SELECT
 ,      oblig.Obligated_Funding_Amount   AS ORA_Grant_Obligated_Funding_Amount
 ,      CASE WHEN grt.SRC_INS_DTTM = grt.SRC_UPD_DTTM THEN True ELSE False END AS ORA_Is_Initial_Record
 FROM OIH.DIM_AWD grt
-LEFT OUTER JOIN attr ON attr.DSID = grt.DSID
--- LEFT OUTER JOIN contract ON contract.AWD_DSID = grt.DSID
-LEFT OUTER JOIN pi ON pi.AWD_DSID = grt.DSID
-LEFT OUTER JOIN ga ON ga.AWD_DSID = grt.DSID
+
 											
 LEFT OUTER JOIN oblig ON grt.DWID = oblig.AWD_DWID
 LEFT OUTER JOIN status ON status.SRC_Status_Name = grt.AWD_STAT_CD
