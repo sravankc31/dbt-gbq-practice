@@ -96,7 +96,3 @@ SELECT
 ,      CASE WHEN grt.SRC_INS_DTTM = grt.SRC_UPD_DTTM THEN True ELSE False END AS ORA_Is_Initial_Record
 FROM OIH.DIM_AWD grt
 
-LEFT OUTER JOIN oblig ON grt.DWID = oblig.AWD_DWID											
-LEFT OUTER JOIN oblig ON grt.DWID = oblig.AWD_DWID
-LEFT OUTER JOIN status ON status.SRC_Status_Name = grt.AWD_STAT_CD
-INNER JOIN Broad_OIH.v_EDW_dim_Sponsor spnsr ON spnsr.Sponsor_DSID = grt.SPNSR_DSID
